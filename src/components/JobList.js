@@ -9,10 +9,7 @@ const JobList = () => {
   const [company, setCompany] = useState("");
   const [location, setLocation] = useState("");
   const [jobType, setJobType] = useState("");
-  const [description, setDescription] = useState("");
   const [salary, setSalary] = useState("");
-  const [minExperience, setMinExperience] = useState("");
-  const [skills, setSkills] = useState("");
   const [applyLink, setApplyLink] = useState("");
   const [filterLocation, setFilterLocation] = useState("");
   const [filterJobType, setFilterJobType] = useState("");
@@ -76,7 +73,7 @@ const JobList = () => {
 
       await axios.post(
         `${API_BASE_URL}/jobs/host`,
-        { title, company, location, type: jobType, description, salary, minExperience, requiredSkills: skills, applyLink },
+        { title, company, location, type: jobType, salary, applyLink },
         { headers: { Authorization: `Bearer ${token}` } }
       );
       alert("Job hosted successfully!");
