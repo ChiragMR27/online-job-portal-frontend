@@ -115,7 +115,7 @@ const RegisterPage = () => {
             <option value="">-- Select Role --</option>
             <option value="USER">User</option>
             <option value="RECRUITER">Recruiter</option>
-            <option value="ADMIN">Admin</option>
+{/*<option value="ADMIN">Admin</option>*/}
           </select>
 
           <button
