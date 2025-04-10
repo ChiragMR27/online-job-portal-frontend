@@ -1,0 +1,104 @@
+/* ✅ Centering and container styling */
+.login-container {
+  width: 320px;
+  margin: 80px auto;
+  padding: 25px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.login-container:hover {
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* ✅ Heading styling */
+.login-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+  font-size: 24px;
+}
+
+/* ✅ Input field styling */
+.login-container input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.login-container input:focus {
+  border-color: #4CAF50;
+}
+
+/* ✅ Button styling */
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+  background-color: #45a049;
+}
+
+/* ✅ Forgot Password Button */
+.forgot-password-btn {
+  background-color: transparent;
+  color: #3498db;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.forgot-password-btn:hover {
+  color: #2878a5;
+}
+
+/* ✅ Register Link */
+.register-link {
+  background: none;
+  color: #4CAF50;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: underline;
+  margin-left: 5px;
+  transition: color 0.3s ease;
+}
+
+.register-link:hover {
+  color: #45a049;
+}
+
+/* ✅ Make it responsive */
+@media (max-width: 400px) {
+  .login-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .login-container h2 {
+    font-size: 20px;
+  }
+
+  .login-container input,
+  .login-container button {
+    font-size: 14px;
+  }
+}

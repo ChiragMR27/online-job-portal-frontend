@@ -1,0 +1,23 @@
+.recruiter-job-board {
+    max-width: 500px;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+  }
+  
+  .recruiter-job-board input,
+  .recruiter-job-board textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+  }
+  
+  .recruiter-job-board button {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+  }
+  
