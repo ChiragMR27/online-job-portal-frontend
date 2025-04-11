@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
+// ✅ Using environment variable for backend URL
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
 const Register = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -17,12 +20,17 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8080/api/auth/register", formData);
+      const response = await axios.post(
+        `${API_BASE_URL}/api/auth/register`,
+        formData
+      );
       alert("Registered successfully! Please verify your email.");
       navigate("/login");
     } catch (error) {
       console.error("Registration error:", error);
-      alert("Registration failed.");
+      alert(
+        error.response?.data?.message || "Registration failed. Please try again."
+      );
     }
   };
 
@@ -66,7 +74,6 @@ const Register = () => {
               <option value="">Select Role</option>
               <option value="USER">User</option>
               <option value="RECRUITER">Recruiter</option>
-              <option value="ADMIN">Admin</option>
             </select>
           </div>
 
