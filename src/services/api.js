@@ -1,11 +1,12 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'http://localhost:8080/api',
-  headers:{
-    "Authorization":"Bearer "+localStorage.getItem("token")
+  baseURL: process.env.REACT_APP_API_BASE_URL + '/api',
+  headers: {
+    "Authorization": "Bearer " + localStorage.getItem("token")
   }
 });
+
 
 export const login = (credentials) => API.post('/auth/login', credentials);
 export const signup = (data) => API.post('/auth/signup', data);
