@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
+// ✅ Use environment variable (must start with REACT_APP_)
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 const Register = () => {
@@ -18,19 +19,20 @@ const Register = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
+
     try {
       const response = await axios.post(
         `${API_BASE_URL}/api/auth/register`,
         formData,
-        { withCredentials: true } // Optional but useful for cookies/sessions
+        { headers: { "Content-Type": "application/json" } }
       );
+
       alert("Registered successfully! Please verify your email.");
       navigate("/login");
     } catch (error) {
       console.error("Registration error:", error);
       alert(
-        error.response?.data?.message ||
-        error.message ||
+        error.response?.data?.error ||
         "Registration failed. Please try again."
       );
     }
@@ -74,6 +76,7 @@ const Register = () => {
               <option value="">Select Role</option>
               <option value="USER">User</option>
               <option value="RECRUITER">Recruiter</option>
+              <option value="ADMIN">Admin</option>
             </select>
           </div>
           <button type="submit" className="btn btn-success w-100">
